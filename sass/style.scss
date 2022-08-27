@@ -1,0 +1,229 @@
+@import "variables";
+@import "utilities";
+
+//Reset CSS
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  line-height: 1.6;
+  background-color: $bg-color;
+
+
+}
+
+a {
+  text-decoration: none;
+  // color: $dark-color;
+}
+
+ul {
+  list-style: none;
+}
+img {
+  width: 100%;
+}
+
+.container {
+  display: inline-block;
+
+  width: 103vh;
+  height: 20vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+
+  .left {
+    display: inline-block;
+    position: relative;
+    width: 40vh;
+    height: 20vh;
+    background: $primary-color;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 120px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    .content{
+      position: absolute;
+      padding: 4vh;
+      .icontxt-fylo{
+        position: absolute;
+        color: #fff;
+        font-family: arial;
+        font-weight: bolder;
+        font-size: 25px;
+
+        span{
+          font-family: arial;
+          margin-left: 20px;
+        }
+      }
+      .icons {
+
+        position: absolute;
+        display: flex;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 3vh;
+        margin-top: 20px;
+        text-align: center;
+        top: 10vh;
+        color: $icon-color;
+        div {
+          @extend %icon-frame;
+          i{
+            @extend %frame-icons;
+          }
+        }
+      }
+    }
+  }
+  .right {
+    width: 60vh;
+    height: 20vh;
+    display: inline-block;
+    .right-t{
+      position: absolute;
+      right: 5.5%;
+      .spaceleft {
+        width: 18vh;
+        height: 6vh;
+        background: $txt-light-color;
+        position: absolute;
+        right: 0;
+        z-index: 1;
+        top: 0;
+        text-align: center;
+        border-radius: 10px;
+
+        .spaceleft-content{
+          width: 18vh;
+          height: 6vh;
+
+          p{
+            font-family: arial;
+            text-align: center;
+            .first{
+              font-size: 28px;
+              font-weight: bolder;
+              color: $txt-darkest-color;
+
+            }
+            .secoend {
+              font-size: 35px;
+              font-weight: bolder;
+              margin-left: -6px;
+              color: $txt-darkest-color;
+            }
+            .thirth {
+              font-size: 30px;
+              font-weight: bolder;
+              margin-left: -6px;
+              color: $txt-darkest-color;
+              vertical-align: -10%;
+            }
+            .fourth {
+              font-family: arial;
+              font-size: 14px;
+              color: $txt-darker-color;
+              vertical-align: 5px;
+            }
+        }
+
+
+
+        }
+      }
+      .spaceleft:before{
+        content:"";
+        position: absolute;
+        height: 0px;
+        width: 0px;
+        top: 4.2vh;
+        left:14.382vh; /* 1px buffer for zooming problems while rendering*/
+        border-width: 1.8vh;
+        border-color: transparent white transparent transparent;
+        border-style: solid;
+      }
+    }
+
+
+
+    .right-b{
+      position: absolute;
+      width: 60vh;
+      height: 16vh;
+      background: $primary-color;
+      border-radius: 10px;
+      bottom: 0;
+      margin-left: 3vh;
+
+      .content{
+        padding: 4vh;
+        .title {
+          color: $txt-light-color;
+
+          p{
+            font-weight: lighter;
+            font-family: arial;
+            .first {
+              @extend %custom-font-style;
+            }
+            .secoend {
+              @extend %custom-font-style;
+              margin-left: -5px;
+              vertical-align: -5%;
+            }
+            .thirth {
+              @extend %custom-font-style;
+              margin-left: -5px;
+              vertical-align: -10%;
+            }
+            .fourth{
+              @extend %custom-font-style;
+            }
+          }
+        }
+        .progress{
+
+          progress {
+            width: 50vh;
+            border: 0;
+            margin-top: 2vh;
+            height: 15px;
+            border-radius: 20px;
+
+          }
+            progress::-webkit-progress-bar {
+
+            border-radius: 20px;
+            background-color: #151e4a;
+          }
+            progress::-webkit-progress-value {
+            border-radius: 20px;
+            background: radial-gradient(7.5px at 98.5%,white,white 7.5px,transparent),linear-gradient(to right, #ff9f97, #fe7895, #fa4c91);
+          }
+        }
+
+
+        .subtitlep {
+          width: 50vh;
+          @extend %subtitle;
+          .subtitle-left {
+            display: inline-block;
+          }
+          .subtitle-right{
+            display: inline-block;
+            float: right;
+          }
+        }
+      }
+
+    }
+  }
+
+
+}
